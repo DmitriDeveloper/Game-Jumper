@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpawnPlatforms : MonoBehaviour
+{
+    public GameObject pers;
+    public GameObject tile;
+
+    void Start()
+    {
+        Vector3 Spawntilet = new Vector3();
+        Vector3 Spawntile = new Vector3();
+        Vector3 Spawntilett = new Vector3();
+        for (int i = 0; i < 500; i++)//i is equal to the number of cycles in this case of 3 platforms
+        {
+            Spawntile.x = Random.Range(-2.7f, 2.7f);//random distance by x
+            Spawntile.y += Random.Range(4f, 7f);//random distance by y,with each cycle, this distance increases
+            Spawntilet.x = Random.Range(-2.7f, 2.7f);
+            Spawntilet.y += Random.Range(4f, 7f);
+            Spawntilett.x = Random.Range(-2.7f, 2.7f);
+            Spawntilett.y += Random.Range(4f, 7f);
+
+            Instantiate(tile, Spawntile, Quaternion.identity);
+            Instantiate(tile, Spawntilet, Quaternion.identity); 
+            Instantiate(tile, Spawntilett, Quaternion.identity);
+        }
+    }
